@@ -1,0 +1,8 @@
+version: '2'
+services:
+ app:
+  image: derymukti/php70:latest
+  volumes: 
+   - ./www:/var/www/html:rw
+  ports:
+   - "8080:80"
