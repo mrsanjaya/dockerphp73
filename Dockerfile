@@ -41,7 +41,7 @@ RUN apt-get -y --force-yes update && apt-get -y --force-yes install \
 						git \
 						unzip \
 						libapache2-mod-php \
-						php7.3-pear \
+						php-pear \
 						php7.3-zip
 RUN a2dismod mpm_event
 RUN a2enmod mpm_prefork \
