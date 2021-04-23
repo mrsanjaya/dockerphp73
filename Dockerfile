@@ -7,10 +7,10 @@ CMD ["/sbin/my_init"]
 ENV    DEBIAN_FRONTEND noninteractive
 
 # utf-8
-ENV LANG       en_US.UTF-8
-ENV LC_ALL     en_US.UTF-8
+# ENV LANG       en_US.UTF-8
+# ENV LC_ALL     en_US.UTF-8
 
-RUN locale-gen en_US.UTF-8
+# RUN locale-gen en_US.UTF-8
 RUN apt-get update
 RUN apt-get install software-properties-common -y
 RUN add-apt-repository ppa:ondrej/php

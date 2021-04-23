@@ -1,7 +1,7 @@
 version: '2'
 services:
  app:
-  image: derymukti/php70:latest
+  image: mrsanjaya/php73:latest
   volumes: 
    - ./www:/var/www/html:rw
   ports:
