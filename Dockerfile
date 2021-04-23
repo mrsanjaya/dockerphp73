@@ -11,9 +11,9 @@ ENV    DEBIAN_FRONTEND noninteractive
 # ENV LC_ALL     en_US.UTF-8
 
 # RUN locale-gen en_US.UTF-8
+RUN add-apt-repository ppa:ondrej/php
 RUN apt-get update
 RUN apt-get install software-properties-common -y
-RUN add-apt-repository ppa:ondrej/php
 RUN apt-get -y --force-yes update && apt-get -y --force-yes install \
 						wget  \
 						sqlite3  \
