@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-MAINTAINER Dery Mukti R <deryprogrammer@gmail.com>
+MAINTAINER Sandhy Sanjaya <sandhysanjaya0110@gmail.com>
 
 CMD ["/sbin/my_init"]
 
@@ -13,6 +13,7 @@ ENV LC_ALL     en_US.UTF-8
 RUN locale-gen en_US.UTF-8
 RUN apt-get update
 RUN apt-get install software-properties-common -y
+RUN add-apt-repository ppa:ondrej/php
 RUN apt-get -y --force-yes update && apt-get -y --force-yes install \
 						wget  \
 						sqlite3  \
@@ -21,35 +22,35 @@ RUN apt-get -y --force-yes update && apt-get -y --force-yes install \
 					 	apache2 \
 					 	apache2-doc \
 					 	apache2-utils \
-						php \
-						php-xml \
-						php-cli \
-						php-dev \
-						php-cgi \
-						php-curl \
-						php-gd \
-						php-mysql \
-						php-mbstring \
-						php-mcrypt \
-						php-memcache \
-						php-memcached \
-						php-json \
-						php-pgsql \
-						php-sqlite3 \
-						php-tidy \
+						php7.3 \
+						php7.3-xml \
+						php7.3-cli \
+						php7.3-dev \
+						php7.3-cgi \
+						php7.3-curl \
+						php7.3-gd \
+						php7.3-mysql \
+						php7.3-mbstring \
+						php7.3-mcrypt \
+						php7.3-memcache \
+						php7.3-memcached \
+						php7.3-json \
+						php7.3-pgsql \
+						php7.3-sqlite3 \
+						php7.3-tidy \
 						git \
 						unzip \
 						libapache2-mod-php \
-						php-pear \
-						php-zip
+						php7.3-pear \
+						php7.3-zip
 RUN a2dismod mpm_event
 RUN a2enmod mpm_prefork \
 			rewrite \
 			alias
 
 # Update php.ini
-RUN sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php/7.0/apache2/php.ini
-RUN sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php/7.0/apache2/php.ini
+RUN sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php/7.3/apache2/php.ini
+RUN sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php/7.3/apache2/php.ini
 
 # install composer
 RUN cd /tmp && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer

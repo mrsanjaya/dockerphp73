@@ -1,4 +1,4 @@
-# DOCKER APACHE DAN PHP 7.0
+# DOCKER APACHE DAN PHP 7.3
 
 ## PENGGUNAAN
 
@@ -41,7 +41,7 @@ file docker-compose.yml
 version: '2'
 services:
   app:
-	  image: derymukti/php70:latest
+	  image: mrsanjaya/php73:latest
 	  volumes: 
 	   - ./www:/var/www/html:rw
 	  ports:
