@@ -14,6 +14,7 @@ ENV    DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get install software-properties-common -y
 RUN add-apt-repository ppa:ondrej/php
+RUN apt-get update
 RUN apt-get -y --force-yes update && apt-get -y --force-yes install \
 						wget  \
 						sqlite3  \
