@@ -35,14 +35,14 @@ RUN apt-get -y --force-yes update && apt-get -y --force-yes install \
 						php8.0-mcrypt \
 						php8.0-memcache \
 						php8.0-memcached \
-						php8.0-json \
+						php-json \
 						php8.0-pgsql \
 						php8.0-sqlite3 \
 						php8.0-tidy \
 						git \
 						unzip \
 						libapache2-mod-php \
-						php8.0-pear \
+						php-pear \
 						php8.0-zip
 RUN a2dismod mpm_event
 RUN a2enmod mpm_prefork \
