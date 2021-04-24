@@ -23,35 +23,35 @@ RUN apt-get -y --force-yes update && apt-get -y --force-yes install \
 					 	apache2 \
 					 	apache2-doc \
 					 	apache2-utils \
-						php7.3 \
-						php7.3-xml \
-						php7.3-cli \
-						php7.3-dev \
-						php7.3-cgi \
-						php7.3-curl \
-						php7.3-gd \
-						php7.3-mysql \
-						php7.3-mbstring \
-						php7.3-mcrypt \
-						php7.3-memcache \
-						php7.3-memcached \
-						php7.3-json \
-						php7.3-pgsql \
-						php7.3-sqlite3 \
-						php7.3-tidy \
+						php8.0 \
+						php8.0-xml \
+						php8.0-cli \
+						php8.0-dev \
+						php8.0-cgi \
+						php8.0-curl \
+						php8.0-gd \
+						php8.0-mysql \
+						php8.0-mbstring \
+						php8.0-mcrypt \
+						php8.0-memcache \
+						php8.0-memcached \
+						php8.0-json \
+						php8.0-pgsql \
+						php8.0-sqlite3 \
+						php8.0-tidy \
 						git \
 						unzip \
 						libapache2-mod-php \
-						php-pear \
-						php7.3-zip
+						php8.0-pear \
+						php8.0-zip
 RUN a2dismod mpm_event
 RUN a2enmod mpm_prefork \
 			rewrite \
 			alias
 
 # Update php.ini
-# RUN sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php/7.3/apache2/php.ini
-# RUN sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php/7.3/apache2/php.ini
+RUN sed -i "s/short_open_tag = Off/short_open_tag = On/" /etc/php/8.0/apache2/php.ini
+RUN sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php/8.0/apache2/php.ini
 
 # install composer
 RUN cd /tmp && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
