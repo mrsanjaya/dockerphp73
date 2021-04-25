@@ -44,6 +44,12 @@ RUN apt-get -y --force-yes update && apt-get -y --force-yes install \
 						libapache2-mod-php \
 						php-pear \
 						php8.0-zip
+RUN docker-php-ext-install zip
+RUN docker-php-ext-install gd
+RUN docker-php-ext-install curl
+RUN docker-php-ext-enable zip
+RUN docker-php-ext-enable gd
+RUN docker-php-ext-enable curl
 RUN a2dismod mpm_event
 RUN a2enmod mpm_prefork \
 			rewrite \
