@@ -23,33 +23,27 @@ RUN apt-get -y --force-yes update && apt-get -y --force-yes install \
 					 	apache2 \
 					 	apache2-doc \
 					 	apache2-utils \
-						php8.0 \
-						php8.0-xml \
-						php8.0-cli \
-						php8.0-dev \
-						php8.0-cgi \
-						php8.0-curl \
-						php8.0-gd \
-						php8.0-mysql \
-						php8.0-mbstring \
-						php8.0-mcrypt \
-						php8.0-memcache \
-						php8.0-memcached \
+						php \
+						php-xml \
+						php-cli \
+						php-dev \
+						php-cgi \
+						php-curl \
+						php-gd \
+						php-mysql \
+						php-mbstring \
+						php-mcrypt \
+						php-memcache \
+						php-memcached \
 						php-json \
-						php8.0-pgsql \
-						php8.0-sqlite3 \
-						php8.0-tidy \
+						php-pgsql \
+						php-sqlite3 \
+						php-tidy \
 						git \
 						unzip \
 						libapache2-mod-php \
 						php-pear \
-						php8.0-zip
-RUN docker-php-ext-install zip
-RUN docker-php-ext-install gd
-RUN docker-php-ext-install curl
-RUN docker-php-ext-enable zip
-RUN docker-php-ext-enable gd
-RUN docker-php-ext-enable curl
+						php-zip \ 
 RUN a2dismod mpm_event
 RUN a2enmod mpm_prefork \
 			rewrite \
