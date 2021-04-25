@@ -23,7 +23,7 @@ RUN apt-get -y --force-yes update && apt-get -y --force-yes install \
 					 	apache2 \
 					 	apache2-doc \
 					 	apache2-utils \
-						php \
+						php8.0 \
 						php-xml \
 						php-cli \
 						php-dev \
@@ -43,7 +43,8 @@ RUN apt-get -y --force-yes update && apt-get -y --force-yes install \
 						unzip \
 						libapache2-mod-php \
 						php-pear \
-						php-zip \ 
+						php-zip
+
 RUN a2dismod mpm_event
 RUN a2enmod mpm_prefork \
 			rewrite \
